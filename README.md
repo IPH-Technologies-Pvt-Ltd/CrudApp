@@ -6,21 +6,52 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Prerequisites
+Before you proceed, make sure you have the following installed:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Node.js
+2. Angular CLI
+3. Firebase account and project (with Firestore enabled)
 
-## Build
+## Getting Started
+1. Clone this repository or create a new Angular project.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Install project dependencies using npm:
+   npm install
+3. Set up your Firebase configuration in src/environments/environment.ts. Replace the Firebase configuration object with your own Firebase project configuration
+4. Run the application using the Angular CLI:
+    ng serve
 
-## Running unit tests
+   
+## Application Overview
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This Angular application provides a user interface to interact with the Firebase Firestore database. Here's an overview of the key features and components:
 
-## Running end-to-end tests
+**Add Employee Form:** You can add employee details, including their name, email, and date of birth.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**View Employee List:** Click the "View Employee List" button to see a list of employees in a table format. You can update and delete employee records from this list.
+
+**Real-time Updates:** The application uses Firebase Realtime updates to keep the employee list synchronized with changes made in the Firestore database.
+
+## FirebaseService
+
+The FirebaseService in the firebase.service.ts file is responsible for interacting with Firebase Firestore. It provides methods to add, retrieve, update, and delete employee records in Firestore.
+
+## Additional Dependencies
+
+This application relies on the following dependencies:
+
+**firebase:** The Firebase JavaScript SDK for interacting with Firestore.
+**angular/material:** The Angular Material library for UI components.
+**jquery and datatables.net:** Used for data table rendering.
+
+
+## Usage
+Access the application in your web browser at http://localhost:4200/.
+
+Use the application to add, view, update, and delete employee records in the Firestore database.
+
+Real-time updates will automatically reflect changes made by other users.
 
 ## Further help
 
