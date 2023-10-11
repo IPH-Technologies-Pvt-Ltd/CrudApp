@@ -1,0 +1,20 @@
+h1 {
+  margin-top: 2%;
+  text-align: center;
+}
+.add {
+  background-color: antiquewhite;
+  border: none;
+}
+
+.student {
+  background-color: darkgray;
+  border: none;
+}
+table {
+  border-radius: 5px;
+}
+.bg-light {
+  background-color: slategray !important;
+  border-radius: 3px;
+}

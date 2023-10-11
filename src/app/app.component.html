@@ -1,0 +1,116 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-8 col-sm-12">
+      <h1>CRUD Application Using Firebase</h1>
+      <div class="card m-2 text-center add">
+        <div class="container">
+          <h1>Add Employee in the Database</h1>
+          <form class="add">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                required
+                [(ngModel)]="studentDetails.name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="age" class="form-label">E-mail</label>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                required
+                [(ngModel)]="studentDetails.email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="age" class="form-label">DOB</label>
+              <input
+                type="date"
+                class="form-control"
+                name="age"
+                required
+                [(ngModel)]="studentDetails.age"
+              />
+            </div>
+            <button type="button" class="btn btn-primary mb-3" (click)="add()">
+              Add <i class="fa-solid fa-circle-plus"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="card m-2 p-4 text-center student">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="toggleStudentList()"
+        >
+          View Employee List
+        </button>
+        <div class="show" *ngIf="showStudentList">
+          <h1>Employee List</h1>
+          <table id="myTable" class="display" style="width: 100%">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>DOB</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of studentCollectiondata">
+                <td>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name-show"
+                    [value]="student.name"
+                    #name
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="age-show"
+                    [value]="student.age"
+                    #age
+                  />
+                </td>
+                <td>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email-show"
+                    [value]="student.email"
+                    #email
+                  />
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-danger mx-2"
+                    (click)="delete(student.id)"
+                  >
+                    Delete
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    (click)="update(student.id, name, age)"
+                  >
+                    Update
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
